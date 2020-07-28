@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,15 +10,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
-   
-    <script  id="template" type="text/x-handlebars-template">
-        <div class="movies">
-         {{ titolo }}
 
-         {{ img }}
+    <script id="template" type="text/x-handlebars-template">
+        <div class="movies">
+        <div> <h4>Titolo: </h4>{{ title}} </div>
+        <div> <h4>Titolo Originale: </h4>{{ original_title }} </div>
+        <div> <h4>Lingua: </h4>{{ original_language }} </div>
+        <div> <h4>Voto: </h4>{{ vote_average }} </div>
         </div>
     </script>
 </head>
+
 <body>
 
     <nav>
@@ -28,9 +31,10 @@
         </div>
     </nav>
     <main id="results">
-      
+
     </main>
 
     <script src="main.js"></script>
 </body>
+
 </html>

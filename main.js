@@ -21,27 +21,19 @@ function getMovie() {
             var movies = data['results'];
 
             var target = $('#results');
+            target.text('');
             var template = $('#template').html();
             var compiled = Handlebars.compile(template); 
 
             for (var i = 0; i < movies.length; i++) {
                 var movie = movies[i];
-
-                var movieHTML = compiled({
-                    titolo: movie['title'],
-                    img: movie['poster_path']
-                });
+                var movieHTML = compiled(movie);
                 target.append(movieHTML)
             }
         }
         
    })
 }
-
-
-
-
-
 
 
 
