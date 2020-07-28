@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+   
+    <script  id="template" type="text/x-handlebars-template">
+        <div class="movies">
+         {{ titolo }}
+
+         {{ img }}
+        </div>
+    </script>
+</head>
+<body>
+
+    <nav>
+        <h1>MARKFIX</h1>
+        <div class="search-cont">
+            <input type="text" value="" id="search">
+            <button id="btn-search"><i class="fas fa-search"></i></button>
+        </div>
+    </nav>
+    <main id="results">
+      
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
