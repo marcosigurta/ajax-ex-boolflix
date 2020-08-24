@@ -13,11 +13,15 @@
 
     <script id="template" type="text/x-handlebars-template">
         <div class="movies">
-        <div> <h4>Titolo: </h4>{{ title}} </div>
+        <div> <h4>Titolo: </h4>{{ title }} </div>
         <div> <h4>Titolo Originale: </h4>{{ original_title }} </div>
         <div> <h4>Lingua: </h4>{{ original_language }} </div>
-        <div> <h4>Voto: </h4>{{ vote_average }} </div>
+       <div>{{{ stars }}}</div> 
+       <div> {{{ flag }}}</div>
+        <img class="poster" src="https://image.tmdb.org/t/p/w185/{{ poster_path }}" alt="">
+       
         </div>
+      
     </script>
 </head>
 

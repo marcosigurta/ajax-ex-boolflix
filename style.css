@@ -6,6 +6,9 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
+
+
 body {
     background-color: #000;
 }
@@ -25,6 +28,18 @@ h1 {
     font-size: 40px;
 }
 
+.fa-star {
+    color: goldenrod;
+}
+
+.flag {
+    height: 25px;
+}
+
+.movies div {
+    margin: 5px 3px;
+}
+
 .search-cont {
   display: flex;
 }
@@ -39,17 +54,38 @@ h1 {
     padding: 10px 20px;
 }
 
+
 main {
-    background-color: violet;
+    background-color: #3A3A3A;
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    flex-flow: row nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    justify-content: flex-start;
+    padding: 10px;
+  
 }
 
 .movies {
-    margin: 5px;
-    border: 1px solid black;
-    height: 300px;
-    width: 150px;
-    flex-basis: calc(100% / 6);
+    margin: 20px;
+    border: 1px solid #fff;
+    min-height: 400px;
+    min-width: 300px;
+    position: relative;
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.45s ease-in-out;
+}
+
+.poster {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.45s ease-in-out;
+}
+
+.poster:hover {
+    opacity: 0.1;
 }
