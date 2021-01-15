@@ -4,40 +4,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+    <title>Netflix Replica</title>
 
-    <script id="template" type="text/x-handlebars-template">
-        <div class="movies">
-        <div> <h4>Titolo: </h4>{{ title }} </div>
-        <div> <h4>Titolo Originale: </h4>{{ original_title }} </div>
-        <div> <h4>Lingua: </h4>{{ original_language }} </div>
-       <div>{{{ stars }}}</div> 
-       <div> {{{ flag }}}</div>
-        <img class="poster" src="https://image.tmdb.org/t/p/w185/{{ poster_path }}" alt="">
-       
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"
+        integrity="sha512-zT3zHcFYbQwjHdKjCu6OMmETx8fJA9S7E6W7kBeFxultf75OPTYUJigEKX58qgyQMi1m1EgenfjMXlRZG8BXaw=="
+        crossorigin="anonymous"></script>
+
+
+    <script id="movie-template" type="text/x-handlebars-template">
+        <div class="movie" id="movie" style="background-image: url('https://image.tmdb.org/t/p/w500/{{ poster_path }}');">
+            <div class="movieContent">
+                <img class="movieNlogo" src="img/netflix-logoN.png" alt="">
+                <div class="movieTitle"><h4>{{ title }}</h4></div>
+                <!-- <div class="oTitle">{{ original_title }}</div> -->
+                <span class="stars">{{{ stars }}}</span>
+                <span class="lang">{{{ lang }}}</span>
+                <div class="overview"> <i>{{{ over }}}</i></div>
+            </div>
         </div>
-      
     </script>
+
+    <script id="series-template" type="text/x-handlebars-template">
+
+        <div class="movie" style="background-image: url('https://image.tmdb.org/t/p/w500/{{ poster_path }}');">
+            <div class="movieContent">
+                <img class="movieNlogo" src="img/netflix-logoN.png" alt="">
+                <div class="movieTitle"><h4>{{ name }}</h4></div>
+                <!-- <div class="oTitle">{{ original_title }}</div> -->
+                <span class="stars">{{{ stars }}}</span>
+                <span class="lang">{{{ lang }}}</span>
+                <div class="overview"> <i>{{{ over }}}</i></div>
+            </div>
+        </div>
+    </script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
+
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-    <nav>
-        <h1>MARKFIX</h1>
-        <div class="search-cont">
-            <input type="text" value="" id="search">
-            <button id="btn-search"><i class="fas fa-search"></i></button>
+
+    <div class="container-fluid head">
+        <div class="row">
+            <div class="logo">
+                <img src="img/netflix-logo.png" alt="">
+            </div>
+            <div id="input">
+                <input id="search" type="text" value="" placeholder="Search...">
+                <button id="btn"><i class="fa fa-search"></i></button>
+            </div>
         </div>
-    </nav>
-    <main id="results">
+    </div>
+
+    <main class="hidden">
+
+        <div class="container-fluid mainContainer">
+
+            <h4>Movies: </h4>
+
+            <div id="movieResults">
+                <div id="iMovieLeft" class="chevron-left">
+                    << /div>
+                        <div id="iMovieRight" class="chevron-right">></div>
+                        <div id="movieContainer">
+
+                        </div>
+
+
+                </div>
+
+                <h4>Series: </h4>
+
+                <div id="seriesResults">
+                    <div id="iSeriesLeft" class="chevron-left">
+                        << /div>
+                            <div id="iSeriesRight" class="chevron-right">></div>
+                            <div id="seriesContainer">
+
+                            </div>
+
+                    </div>
+
+                </div>
+
 
     </main>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="main.js"></script>
 </body>
 
